@@ -1,5 +1,5 @@
 export default class Day {
-  constructor() {
-    this.date = new Date().toLocaleDateString("es-pa");
+  constructor(inputDate) {
+    this.date = new Date(inputDate).toDateString();
   }
 }
