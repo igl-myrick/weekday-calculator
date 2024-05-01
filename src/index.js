@@ -6,9 +6,9 @@ import Day from "./day.js";
 function handleDateForm(e) {
   e.preventDefault();
   const formInput = document.querySelector("#date-input").value;
-  console.log(formInput);
-  const newDay = new Day(formInput);
-  console.log(newDay);
+  const formOutput = formInput.split("-").join("/");
+  const newDay = new Day(formOutput);
+  return newDay;
 }
 
 window.addEventListener("load", function() {
