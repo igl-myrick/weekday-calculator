@@ -5,6 +5,10 @@ import Day from "./day.js";
 
 function displayFormInput(e) {
   e.preventDefault();
+  if (document.querySelector("p")) {
+    const lastResult = document.querySelector("p");
+    lastResult.remove();
+  }
   const formInput = document.querySelector("#date-input").value;
   const outputDiv = document.getElementById("response");
   const outputP = document.createElement("p");
