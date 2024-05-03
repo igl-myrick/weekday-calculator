@@ -3,14 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/styles.css";
 import Day from "./day.js";
 
-function handleDateForm(e) {
+function displayFormInput(e) {
   e.preventDefault();
   const formInput = document.querySelector("#date-input").value;
-  const formOutput = formInput.split("-").join("/");
-  const newDay = new Day(formOutput);
-  return newDay;
+  const outputDiv = document.getElementById("response");
+  const outputP = document.createElement("p");
+  
+  const newDay = new Day(formInput.split("-").join("/"));
+  const userDay = newDay.getWeekday();
+  const userDateStr = newDay.dateStr;
+  outputP.innerText = `${userDateStr} is a ${userDay}.`;
+  
+  outputDiv.append(outputP);
+  document.body.append(outputDiv);
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#date-form").addEventListener("submit", handleDateForm);
+  document.querySelector("#date-form").addEventListener("submit", displayFormInput);
 });
