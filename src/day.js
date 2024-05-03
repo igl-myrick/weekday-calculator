@@ -20,6 +20,8 @@ export default class Day {
       return "Friday";
     } else if (weekday === 6) {
       return "Saturday";
+    } else {
+      return "Invalid date";
     }
   }
 }
